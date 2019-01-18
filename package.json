@@ -1,9 +1,21 @@
 {
+  "_from": "fake",
   "name": "@binaries/terraform",
-  "version": "0.11.11-0",
+  "version": "0.11.11-1",
+  "author": "Jacob Gillespie <jacobwgillespie@gmail.com>",
+  "homepage": "https://github.com/at-binaries/terraform",
+  "repository": "git://github.com/at-binaries/terraform.git",
   "license": "MIT",
+  "bin": {
+    "terraform": "build/terraform"
+  },
   "scripts": {
-    "install": "node install.js"
+    "build": "./build.sh",
+    "install": "prebuild-install"
+  },
+  "config": {
+    "target": "1",
+    "runtime": "bin"
   },
   "prettier": {
     "printWidth": 120,
@@ -12,7 +24,11 @@
     "trailingComma": "all",
     "bracketSpacing": false
   },
+  "dependencies": {
+    "prebuild-install": "^5.2.2"
+  },
   "devDependencies": {
+    "prebuild": "^8.1.2",
     "prettier": "^1.15.3"
   }
 }
